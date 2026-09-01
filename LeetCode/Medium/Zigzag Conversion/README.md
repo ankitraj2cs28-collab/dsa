@@ -4,16 +4,12 @@
 |-------|-------|
 | **Platform** | LeetCode |
 | **Difficulty** | Medium |
-| **Language** | java |
+| **Language** | python |
 | **Solved On** | September 1, 2026 |
 | **Tags** | String |
 | **Link** | [View Problem](https://leetcode.com/problems/zigzag-conversion/) |
-| **Runtime** | 5 ms |
-| **Memory** | 46.4 MB |
-
-## Approach
-
-fwefewfwef
+| **Runtime** | 9 ms |
+| **Memory** | 12.4 MB |
 
 ## Problem Description
 
@@ -70,31 +66,34 @@ P     I
 <details>
 <summary>Click to expand</summary>
 
-**Title**: Easy to understand Java solution
-**Author**: [@dylan_yu](https://leetcode.com/dylan_yu/)
-**Upvotes**: 860 👍
-**Link**: [View Original Post](https://leetcode.com/problems/zigzag-conversion/solutions/3403/)
+**Title**: Python O(n) Solution in 96ms (99.43%)
+**Author**: [@pharrellyhy](https://leetcode.com/pharrellyhy/)
+**Upvotes**: 597 👍
+**Link**: [View Original Post](https://leetcode.com/problems/zigzag-conversion/solutions/3404/)
 
 ---
 
-Create nRows StringBuffers, and keep collecting characters from original string to corresponding StringBuffer. Just take care of your index to keep them in bound.
-
-    public String convert(String s, int nRows) {
-        char[] c = s.toCharArray();
-        int len = c.length;
-        StringBuffer[] sb = new StringBuffer[nRows];
-        for (int i = 0; i < sb.length; i++) sb[i] = new StringBuffer();
-        
-        int i = 0;
-        while (i < len) {
-            for (int idx = 0; idx < nRows && i < len; idx++) // vertically down
-                sb[idx].append(c[i++]);
-            for (int idx = nRows-2; idx >= 1 && i < len; idx--) // obliquely up
-                sb[idx].append(c[i++]);
-        }
-        for (int idx = 1; idx < sb.length; idx++)
-            sb[0].append(sb[idx]);
-        return sb[0].toString();
-    }
+    class Solution(object):
+        def convert(self, s, numRows):
+            """
+            :type s: str
+            :type numRows: int
+            :rtype: str
+            """
+            if numRows == 1 or numRows >= len(s):
+                return s
+    
+            L = [''] * numRows
+            index, step = 0, 1
+    
+            for x in s:
+                L[index] += x
+                if index == 0:
+                    step = 1
+                elif index == numRows -1:
+                    step = -1
+                index += step
+    
+            return ''.join(L)
 
 </details>
