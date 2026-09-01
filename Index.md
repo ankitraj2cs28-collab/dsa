@@ -8,3 +8,6 @@ All solved problems organized by pattern/category.
 
 ## Bit Manipulation
 - [Zigzag Conversion](./LeetCode/Medium/Zigzag%20Conversion) - *Medium*
+
+## Dynamic Programming
+- [Zigzag Conversion](./LeetCode/Medium/Zigzag%20Conversion) - *Medium*
