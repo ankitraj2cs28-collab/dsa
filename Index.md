@@ -11,3 +11,6 @@ All solved problems organized by pattern/category.
 
 ## Dynamic Programming
 - [Zigzag Conversion](./LeetCode/Medium/Zigzag%20Conversion) - *Medium*
+
+## Sliding Window
+- [Zigzag Conversion](./LeetCode/Medium/Zigzag%20Conversion) - *Medium*
